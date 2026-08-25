@@ -84,8 +84,8 @@ clean: CMakeFiles/PayrollSystem_autogen.dir/clean
 # Target rules for target CMakeFiles/PayrollSystem.dir
 
 # All Build rule for target.
-CMakeFiles/PayrollSystem.dir/all: CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/all
 CMakeFiles/PayrollSystem.dir/all: CMakeFiles/PayrollSystem_autogen.dir/all
+CMakeFiles/PayrollSystem.dir/all: CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/all
 CMakeFiles/PayrollSystem.dir/all: CMakeFiles/create_db_dir.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PayrollSystem.dir\build.make CMakeFiles/PayrollSystem.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PayrollSystem.dir\build.make CMakeFiles/PayrollSystem.dir/build
