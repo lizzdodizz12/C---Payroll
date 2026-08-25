@@ -1,0 +1,6 @@
+C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/PayrollSystem.dir
+C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/create_db_dir.dir
+C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/edit_cache.dir
+C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir
+C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/PayrollSystem_autogen.dir
