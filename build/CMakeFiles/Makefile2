@@ -84,9 +84,9 @@ clean: CMakeFiles/PayrollSystem_autogen.dir/clean
 # Target rules for target CMakeFiles/PayrollSystem.dir
 
 # All Build rule for target.
+CMakeFiles/PayrollSystem.dir/all: CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/all
 CMakeFiles/PayrollSystem.dir/all: CMakeFiles/PayrollSystem_autogen.dir/all
 CMakeFiles/PayrollSystem.dir/all: CMakeFiles/create_db_dir.dir/all
-CMakeFiles/PayrollSystem.dir/all: CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PayrollSystem.dir\build.make CMakeFiles/PayrollSystem.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PayrollSystem.dir\build.make CMakeFiles/PayrollSystem.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=A:\C---Payroll\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target PayrollSystem"
@@ -104,8 +104,8 @@ PayrollSystem: CMakeFiles/PayrollSystem.dir/rule
 .PHONY : PayrollSystem
 
 # codegen rule for target.
-CMakeFiles/PayrollSystem.dir/codegen: CMakeFiles/create_db_dir.dir/all
 CMakeFiles/PayrollSystem.dir/codegen: CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/all
+CMakeFiles/PayrollSystem.dir/codegen: CMakeFiles/create_db_dir.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PayrollSystem.dir\build.make CMakeFiles/PayrollSystem.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=A:\C---Payroll\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Finished codegen for target PayrollSystem"
 .PHONY : CMakeFiles/PayrollSystem.dir/codegen

@@ -478,16 +478,23 @@ QWidget* MainWindow::createAttendancePage() {
     l->addWidget(header);
 
     auto* bar = new QHBoxLayout;
-    auto* a = createActionButton(p, "Add / Update Record", "#16a34a");
+    auto* a = createActionButton(p, "Add Record", "#16a34a");
+    auto* u = createActionButton(p, "Update Record", "#f59e0b");
+    auto* d = createActionButton(p, "Delete Record", "#ef4444");
     auto* r = createActionButton(p, "Refresh", "#0f172a");
-    bar->addWidget(a); bar->addWidget(r); bar->addStretch();
+    bar->addWidget(a); bar->addWidget(u); bar->addWidget(d); bar->addWidget(r); bar->addStretch();
     l->addLayout(bar);
 
     attendanceTable = new QTableWidget;
     configureTable(attendanceTable, {"Employee ID", "Employee", "Period", "Days", "Hours", "OT Hours", "Leave", "Absences"});
     l->addWidget(attendanceTable, 1);
     connect(a, &QPushButton::clicked, this, &MainWindow::addAttendance);
+    connect(u, &QPushButton::clicked, this, &MainWindow::updateAttendance);
+    connect(d, &QPushButton::clicked, this, &MainWindow::deleteAttendance);
     connect(r, &QPushButton::clicked, this, &MainWindow::loadAttendance);
+    a->setEnabled(isAdministrator());
+    u->setEnabled(isAdministrator());
+    d->setEnabled(isAdministrator());
     return p;
 }
 
@@ -780,6 +787,26 @@ void MainWindow::addAttendance() {
     auto* leave = new QSpinBox(&d), *absence = new QSpinBox(&d);
     for (auto* x : {days, hours, ot}) x->setRange(0, 1000);
     leave->setRange(0, 1000); absence->setRange(0, 1000);
+    end->setEnabled(false);
+
+    auto updateHourlyDates = [this, emp, start, end, hours]() {
+        const char* sql = "SELECT p.pay_type FROM employees e JOIN positions p ON p.position_id=e.position_id WHERE e.employee_id=?";
+        sqlite3_stmt* statement = nullptr;
+        QString payType;
+        if (sqlite3_prepare_v2(db.getDB(), sql, -1, &statement, nullptr) == SQLITE_OK) {
+            sqlite3_bind_int(statement, 1, emp->currentData().toInt());
+            if (sqlite3_step(statement) == SQLITE_ROW) payType = text(statement, 0);
+            sqlite3_finalize(statement);
+        }
+
+        const bool hourly = payType == "Hourly";
+        const bool sameDay = hourly && hours->value() <= 24.0;
+        end->setEnabled(!sameDay);
+        if (sameDay) end->setDate(start->date());
+    };
+    connect(emp, &QComboBox::currentIndexChanged, this, [updateHourlyDates](int) { updateHourlyDates(); });
+    connect(start, &QDateEdit::dateChanged, this, [updateHourlyDates](const QDate&) { updateHourlyDates(); });
+    connect(hours, qOverload<double>(&QDoubleSpinBox::valueChanged), this, [updateHourlyDates](double) { updateHourlyDates(); });
     f->addRow("Employee:", emp);
     f->addRow("Period Start:", start);
     f->addRow("Period End:", end);
@@ -791,10 +818,110 @@ void MainWindow::addAttendance() {
     auto* ok = new QPushButton("Save", &d);
     f->addRow(ok);
     connect(ok, &QPushButton::clicked, &d, &QDialog::accept);
+    updateHourlyDates();
     if (d.exec() == QDialog::Accepted) {
+        if (start->date() > end->date()) {
+            QMessageBox::warning(this, "Attendance", "The start date must be earlier than or equal to the end date.");
+            return;
+        }
+
         if (!Attendance::save(db, emp->currentData().toInt(), start->date().toString("yyyy-MM-dd").toStdString() + " to " + end->date().toString("yyyy-MM-dd").toStdString(), days->value(), hours->value(), ot->value(), absence->value(), leave->value())) QMessageBox::warning(this, "Attendance", "Unable to save attendance.");
         loadAttendance();
     }
+}
+
+void MainWindow::updateAttendance() {
+    const int row = attendanceTable ? attendanceTable->currentRow() : -1;
+    if (row < 0) {
+        QMessageBox::warning(this, "Attendance", "Please select an attendance record.");
+        return;
+    }
+
+    const int employeeID = attendanceTable->item(row, 0)->data(Qt::UserRole).toInt();
+    const QString oldPeriod = attendanceTable->item(row, 2)->text();
+    const QStringList periodParts = oldPeriod.split(" to ");
+    if (periodParts.size() != 2) return;
+
+    QDialog d(this);
+    d.setWindowTitle("Update Attendance Record");
+    auto* f = new QFormLayout(&d);
+    auto* emp = new QComboBox(&d);
+    loadEmployeeChoices(emp);
+    const int employeeIndex = emp->findData(employeeID);
+    if (employeeIndex >= 0) emp->setCurrentIndex(employeeIndex);
+    emp->setEnabled(false);
+    auto* start = dateBox(&d), *end = dateBox(&d);
+    start->setDate(QDate::fromString(periodParts.at(0), "yyyy-MM-dd"));
+    end->setDate(QDate::fromString(periodParts.at(1), "yyyy-MM-dd"));
+    auto* days = new QDoubleSpinBox(&d), *hours = new QDoubleSpinBox(&d), *ot = new QDoubleSpinBox(&d);
+    auto* leave = new QSpinBox(&d), *absence = new QSpinBox(&d);
+    for (auto* x : {days, hours, ot}) x->setRange(0, 1000);
+    leave->setRange(0, 1000); absence->setRange(0, 1000);
+    days->setValue(attendanceTable->item(row, 3)->text().toDouble());
+    hours->setValue(attendanceTable->item(row, 4)->text().toDouble());
+    ot->setValue(attendanceTable->item(row, 5)->text().toDouble());
+    leave->setValue(attendanceTable->item(row, 6)->text().toInt());
+    absence->setValue(attendanceTable->item(row, 7)->text().toInt());
+
+    auto updateHourlyDates = [this, start, end, hours, employeeID]() {
+        const char* sql = "SELECT p.pay_type FROM employees e JOIN positions p ON p.position_id=e.position_id WHERE e.employee_id=?";
+        sqlite3_stmt* statement = nullptr;
+        QString payType;
+        if (sqlite3_prepare_v2(db.getDB(), sql, -1, &statement, nullptr) == SQLITE_OK) {
+            sqlite3_bind_int(statement, 1, employeeID);
+            if (sqlite3_step(statement) == SQLITE_ROW) payType = text(statement, 0);
+            sqlite3_finalize(statement);
+        }
+
+        const bool sameDay = payType == "Hourly" && hours->value() <= 24.0;
+        end->setEnabled(!sameDay);
+        if (sameDay) end->setDate(start->date());
+    };
+    connect(start, &QDateEdit::dateChanged, this, [updateHourlyDates](const QDate&) { updateHourlyDates(); });
+    connect(hours, qOverload<double>(&QDoubleSpinBox::valueChanged), this, [updateHourlyDates](double) { updateHourlyDates(); });
+    f->addRow("Employee:", emp);
+    f->addRow("Period Start:", start);
+    f->addRow("Period End:", end);
+    f->addRow("Days Worked:", days);
+    f->addRow("Hours Worked:", hours);
+    f->addRow("Overtime Hours:", ot);
+    f->addRow("Leave Days:", leave);
+    f->addRow("Absences:", absence);
+    auto* ok = new QPushButton("Update", &d);
+    f->addRow(ok);
+    connect(ok, &QPushButton::clicked, &d, &QDialog::accept);
+    updateHourlyDates();
+    if (d.exec() != QDialog::Accepted) return;
+    if (start->date() > end->date()) {
+        QMessageBox::warning(this, "Attendance", "The start date must be earlier than or equal to the end date.");
+        return;
+    }
+
+    const QString newPeriod = start->date().toString("yyyy-MM-dd") + " to " + end->date().toString("yyyy-MM-dd");
+    if (newPeriod != oldPeriod && !Attendance::remove(db, employeeID, oldPeriod.toStdString())) {
+        QMessageBox::warning(this, "Attendance", "Unable to replace the old attendance record.");
+        return;
+    }
+    if (!Attendance::save(db, employeeID, newPeriod.toStdString(), days->value(), hours->value(), ot->value(), absence->value(), leave->value())) {
+        QMessageBox::warning(this, "Attendance", "Unable to update attendance.");
+    }
+    loadAttendance();
+}
+
+void MainWindow::deleteAttendance() {
+    const int row = attendanceTable ? attendanceTable->currentRow() : -1;
+    if (row < 0) {
+        QMessageBox::warning(this, "Attendance", "Please select an attendance record.");
+        return;
+    }
+
+    const int employeeID = attendanceTable->item(row, 0)->data(Qt::UserRole).toInt();
+    const QString period = attendanceTable->item(row, 2)->text();
+    if (QMessageBox::question(this, "Delete Attendance", "Delete the selected attendance record?") != QMessageBox::Yes) return;
+    if (!Attendance::remove(db, employeeID, period.toStdString())) {
+        QMessageBox::warning(this, "Attendance", "Unable to delete attendance record.");
+    }
+    loadAttendance();
 }
 
 void MainWindow::processPayroll() {

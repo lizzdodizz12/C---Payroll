@@ -29,6 +29,19 @@ bool Attendance::save(Database& db, int employeeID, const std::string& period,
     return success;
 }
 
+bool Attendance::remove(Database& db, int employeeID, const std::string& period) {
+    if (!db.isConnected() || employeeID <= 0 || period.empty()) return false;
+
+    const char* sql = "DELETE FROM attendance WHERE employee_id=? AND payroll_period=?";
+    sqlite3_stmt* statement = nullptr;
+    if (sqlite3_prepare_v2(db.getDB(), sql, -1, &statement, nullptr) != SQLITE_OK) return false;
+    sqlite3_bind_int(statement, 1, employeeID);
+    sqlite3_bind_text(statement, 2, period.c_str(), -1, SQLITE_TRANSIENT);
+    const bool success = sqlite3_step(statement) == SQLITE_DONE;
+    sqlite3_finalize(statement);
+    return success;
+}
+
 void Attendance::display(Database& db, const std::string& period) {
     const char* sql = "SELECT a.employee_id, e.first_name || ' ' || e.last_name, a.days_worked, "
                       "a.hours_worked, a.overtime_hours, a.absences, a.leave_days "

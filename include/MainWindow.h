@@ -36,6 +36,8 @@ private slots:
     void editPosition();
     void deletePosition();
     void addAttendance();
+    void updateAttendance();
+    void deleteAttendance();
     void processPayroll();
     void markSelectedPaid();
     void exportCsv();

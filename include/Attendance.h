@@ -8,6 +8,7 @@ public:
     static bool save(Database& db, int employeeID, const std::string& period,
                      double daysWorked, double hoursWorked, double overtimeHours,
                      int absences, int leaveDays);
+    static bool remove(Database& db, int employeeID, const std::string& period);
     static void display(Database& db, const std::string& period);
 };
 

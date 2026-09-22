@@ -21,6 +21,22 @@ std::vector<Deduction> parseDeductions(const std::string& input) {
     }
     return result;
 }
+
+bool parseAttendancePeriod(const std::string& period, std::string& startDate, std::string& endDate) {
+    const std::string marker = " to ";
+    const std::size_t separator = period.find(marker);
+    if (separator == std::string::npos) return false;
+    startDate = period.substr(0, separator);
+    endDate = period.substr(separator + marker.size());
+    return startDate.size() == 10 && endDate.size() == 10;
+}
+
+bool periodOverlaps(const std::string& recordPeriod, const std::string& selectedStart, const std::string& selectedEnd) {
+    std::string recordStart;
+    std::string recordEnd;
+    if (!parseAttendancePeriod(recordPeriod, recordStart, recordEnd)) return false;
+    return recordStart <= selectedEnd && recordEnd >= selectedStart;
+}
 }
 
 bool Payroll::process(Database& db, int employeeID, const std::string& periodStart,
@@ -28,29 +44,47 @@ bool Payroll::process(Database& db, int employeeID, const std::string& periodSta
                       double overtimeMultiplier, const std::string& deductions) {
     if (!db.isConnected() || employeeID <= 0 || periodStart.empty() || periodEnd.empty() ||
         bonuses < 0 || otherEarnings < 0 || overtimeMultiplier <= 0) return false;
+    if (periodStart > periodEnd) return false;
 
-    const char* sourceSql = "SELECT p.pay_type, p.default_rate, COALESCE(a.days_worked,0), "
-                            "COALESCE(a.hours_worked,0), COALESCE(a.overtime_hours,0) "
+    const char* sourceSql = "SELECT p.pay_type, p.default_rate, a.payroll_period, a.days_worked, a.hours_worked, a.overtime_hours "
                             "FROM employees e JOIN positions p ON p.position_id=e.position_id "
                             "LEFT JOIN attendance a ON a.employee_id=e.employee_id "
-                            "AND a.payroll_period=? WHERE e.employee_id=?";
+                            "WHERE e.employee_id=?";
     sqlite3_stmt* source = nullptr;
     if (sqlite3_prepare_v2(db.getDB(), sourceSql, -1, &source, nullptr) != SQLITE_OK) return false;
-    const std::string period = periodStart + " to " + periodEnd;
-    sqlite3_bind_text(source, 1, period.c_str(), -1, SQLITE_TRANSIENT);
-    sqlite3_bind_int(source, 2, employeeID);
-    if (sqlite3_step(source) != SQLITE_ROW) { sqlite3_finalize(source); return false; }
+    sqlite3_bind_int(source, 1, employeeID);
 
-    const std::string payType = reinterpret_cast<const char*>(sqlite3_column_text(source, 0));
-    const double rate = sqlite3_column_double(source, 1);
-    const double days = sqlite3_column_double(source, 2);
-    const double hours = sqlite3_column_double(source, 3);
-    const double overtimeHours = sqlite3_column_double(source, 4);
+    double totalDays = 0.0;
+    double totalHours = 0.0;
+    double totalOvertime = 0.0;
+    std::string payType;
+    double rate = 0.0;
+    bool foundEmployee = false;
+
+    while (sqlite3_step(source) == SQLITE_ROW) {
+        if (!foundEmployee) {
+            payType = reinterpret_cast<const char*>(sqlite3_column_text(source, 0));
+            rate = sqlite3_column_double(source, 1);
+            foundEmployee = true;
+        }
+
+        const unsigned char* periodValue = sqlite3_column_text(source, 2);
+        if (!periodValue) continue;
+
+        const std::string recordPeriod = reinterpret_cast<const char*>(periodValue);
+        if (!periodOverlaps(recordPeriod, periodStart, periodEnd)) continue;
+
+        totalDays += sqlite3_column_double(source, 3);
+        totalHours += sqlite3_column_double(source, 4);
+        totalOvertime += sqlite3_column_double(source, 5);
+    }
     sqlite3_finalize(source);
 
-    const double basicPay = payType == "Monthly" ? rate : (payType == "Daily" ? rate * days : rate * hours);
+    if (!foundEmployee) return false;
+
+    const double basicPay = payType == "Monthly" ? rate : (payType == "Daily" ? rate * totalDays : rate * totalHours);
     const double hourlyRate = payType == "Hourly" ? rate : (payType == "Daily" ? rate / 8.0 : rate / 22.0 / 8.0);
-    const double overtimePay = hourlyRate * overtimeHours * overtimeMultiplier;
+    const double overtimePay = hourlyRate * totalOvertime * overtimeMultiplier;
     const double grossPay = basicPay + overtimePay + bonuses + otherEarnings;
     const std::vector<Deduction> parsed = parseDeductions(deductions);
     double totalDeductions = 0;
