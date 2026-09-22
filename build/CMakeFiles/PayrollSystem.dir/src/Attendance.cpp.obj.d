@@ -1,7 +1,6 @@
 CMakeFiles/PayrollSystem.dir/src/Attendance.cpp.obj: \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\src\Attendance.cpp \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Attendance.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Database.h \
+ A:\C---Payroll\src\Attendance.cpp A:/C---Payroll/include/Attendance.h \
+ A:/C---Payroll/include/Database.h \
  C:/msys64/mingw64/include/c++/16.1.0/string \
  C:/msys64/mingw64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \

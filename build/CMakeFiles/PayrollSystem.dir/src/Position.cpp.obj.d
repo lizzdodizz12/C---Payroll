@@ -1,6 +1,5 @@
 CMakeFiles/PayrollSystem.dir/src/Position.cpp.obj: \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\src\Position.cpp \
- C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/Position.h \
+ A:\C---Payroll\src\Position.cpp A:/C---Payroll/include/Position.h \
  C:/msys64/mingw64/include/c++/16.1.0/string \
  C:/msys64/mingw64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -102,8 +101,7 @@ CMakeFiles/PayrollSystem.dir/src/Position.cpp.obj: \
  C:/msys64/mingw64/include/c++/16.1.0/bits/uses_allocator_args.h \
  C:/msys64/mingw64/include/c++/16.1.0/tuple \
  C:/msys64/mingw64/include/c++/16.1.0/bits/invoke.h \
- C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/Database.h \
- C:/msys64/mingw64/include/sqlite3.h \
+ A:/C---Payroll/include/Database.h C:/msys64/mingw64/include/sqlite3.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdarg.h \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \

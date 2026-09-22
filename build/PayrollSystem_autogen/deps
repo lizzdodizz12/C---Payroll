@@ -1,4 +1,22 @@
 PayrollSystem_autogen/timestamp: \
+	A:/C---Payroll/CMakeLists.txt \
+	A:/C---Payroll/build/CMakeFiles/4.4.2/CMakeCCompiler.cmake \
+	A:/C---Payroll/build/CMakeFiles/4.4.2/CMakeCXXCompiler.cmake \
+	A:/C---Payroll/build/CMakeFiles/4.4.2/CMakeRCCompiler.cmake \
+	A:/C---Payroll/build/CMakeFiles/4.4.2/CMakeSystem.cmake \
+	A:/C---Payroll/build/PayrollSystem_autogen/moc_predefs.h \
+	A:/C---Payroll/include/Database.h \
+	A:/C---Payroll/include/MainWindow.h \
+	A:/C---Payroll/include/User.h \
+	A:/C---Payroll/src/Attendance.cpp \
+	A:/C---Payroll/src/Database.cpp \
+	A:/C---Payroll/src/Employee.cpp \
+	A:/C---Payroll/src/MainWindow.cpp \
+	A:/C---Payroll/src/Payroll.cpp \
+	A:/C---Payroll/src/Position.cpp \
+	A:/C---Payroll/src/Reports.cpp \
+	A:/C---Payroll/src/User.cpp \
+	A:/C---Payroll/src/main.cpp \
 	C:/Program\ Files/CMake/share/cmake-4.4/Modules/CMakeCInformation.cmake \
 	C:/Program\ Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake \
 	C:/Program\ Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
@@ -49,24 +67,6 @@ PayrollSystem_autogen/timestamp: \
 	C:/Program\ Files/CMake/share/cmake-4.4/Modules/Platform/Windows-windres.cmake \
 	C:/Program\ Files/CMake/share/cmake-4.4/Modules/Platform/Windows.cmake \
 	C:/Program\ Files/CMake/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/CMakeLists.txt \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/CMakeFiles/4.4.2/CMakeCCompiler.cmake \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/CMakeFiles/4.4.2/CMakeCXXCompiler.cmake \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/CMakeFiles/4.4.2/CMakeRCCompiler.cmake \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/CMakeFiles/4.4.2/CMakeSystem.cmake \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/PayrollSystem_autogen/moc_predefs.h \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/Database.h \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/MainWindow.h \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/User.h \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/Attendance.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/Database.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/Employee.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/MainWindow.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/Payroll.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/Position.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/Reports.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/User.cpp \
-	C:/Users/Christian_Inna/Desktop/C++\ Payroll/src/main.cpp \
 	C:/msys64/mingw64/include/_mingw.h \
 	C:/msys64/mingw64/include/_mingw_mac.h \
 	C:/msys64/mingw64/include/_mingw_off_t.h \

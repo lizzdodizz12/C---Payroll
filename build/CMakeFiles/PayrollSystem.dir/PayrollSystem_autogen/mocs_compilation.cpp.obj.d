@@ -1,7 +1,7 @@
 CMakeFiles/PayrollSystem.dir/PayrollSystem_autogen/mocs_compilation.cpp.obj: \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\build\PayrollSystem_autogen\mocs_compilation.cpp \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\build\PayrollSystem_autogen\6YEA5652QU/moc_MainWindow.cpp \
- C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/MainWindow.h \
+ A:\C---Payroll\build\PayrollSystem_autogen\mocs_compilation.cpp \
+ A:\C---Payroll\build\PayrollSystem_autogen\6YEA5652QU/moc_MainWindow.cpp \
+ A:/C---Payroll/include/MainWindow.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
  C:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -442,8 +442,7 @@ CMakeFiles/PayrollSystem.dir/PayrollSystem_autogen/mocs_compilation.cpp.obj: \
  C:/msys64/mingw64/include/qt6/QtGui/qtextoption.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QTextEdit \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtextedit.h \
- C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/Database.h \
- C:/msys64/mingw64/include/sqlite3.h \
+ A:/C---Payroll/include/Database.h C:/msys64/mingw64/include/sqlite3.h \
  C:/msys64/mingw64/include/c++/16.1.0/iostream \
  C:/msys64/mingw64/include/c++/16.1.0/ostream \
  C:/msys64/mingw64/include/c++/16.1.0/bits/ostream.h \
@@ -460,7 +459,7 @@ CMakeFiles/PayrollSystem.dir/PayrollSystem_autogen/mocs_compilation.cpp.obj: \
  C:/msys64/mingw64/include/c++/16.1.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/16.1.0/istream \
  C:/msys64/mingw64/include/c++/16.1.0/bits/istream.tcc \
- C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/User.h \
+ A:/C---Payroll/include/User.h \
  C:/msys64/mingw64/include/qt6/QtCore/qtmochelpers.h \
  C:/msys64/mingw64/include/qt6/QtCore/qtmocconstants.h \
  C:/msys64/mingw64/include/qt6/QtCore/q20algorithm.h

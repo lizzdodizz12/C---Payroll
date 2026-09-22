@@ -1,6 +1,5 @@
 CMakeFiles/PayrollSystem.dir/src/MainWindow.cpp.obj: \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\src\MainWindow.cpp \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/MainWindow.h \
+ A:\C---Payroll\src\MainWindow.cpp A:/C---Payroll/include/MainWindow.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
  C:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -441,8 +440,7 @@ CMakeFiles/PayrollSystem.dir/src/MainWindow.cpp.obj: \
  C:/msys64/mingw64/include/qt6/QtGui/qtextoption.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QTextEdit \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtextedit.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Database.h \
- C:/msys64/mingw64/include/sqlite3.h \
+ A:/C---Payroll/include/Database.h C:/msys64/mingw64/include/sqlite3.h \
  C:/msys64/mingw64/include/c++/16.1.0/iostream \
  C:/msys64/mingw64/include/c++/16.1.0/ostream \
  C:/msys64/mingw64/include/c++/16.1.0/bits/ostream.h \
@@ -459,12 +457,9 @@ CMakeFiles/PayrollSystem.dir/src/MainWindow.cpp.obj: \
  C:/msys64/mingw64/include/c++/16.1.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/16.1.0/istream \
  C:/msys64/mingw64/include/c++/16.1.0/bits/istream.tcc \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/User.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Employee.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Position.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Attendance.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Payroll.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Reports.h \
+ A:/C---Payroll/include/User.h A:/C---Payroll/include/Employee.h \
+ A:/C---Payroll/include/Position.h A:/C---Payroll/include/Attendance.h \
+ A:/C---Payroll/include/Payroll.h A:/C---Payroll/include/Reports.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QApplication \
  C:/msys64/mingw64/include/qt6/QtWidgets/qapplication.h \
  C:/msys64/mingw64/include/qt6/QtCore/qcoreapplication.h \
@@ -532,4 +527,9 @@ CMakeFiles/PayrollSystem.dir/src/MainWindow.cpp.obj: \
  C:/msys64/mingw64/include/qt6/QtCore/qfile.h \
  C:/msys64/mingw64/include/qt6/QtCore/qfileinfo.h \
  C:/msys64/mingw64/include/qt6/QtCore/QFileInfo \
- C:/msys64/mingw64/include/qt6/QtCore/QDate
+ C:/msys64/mingw64/include/qt6/QtCore/QDate \
+ C:/msys64/mingw64/include/qt6/QtGui/QAction \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QProgressBar \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qprogressbar.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QToolBar \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qtoolbar.h

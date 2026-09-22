@@ -1,7 +1,7 @@
-C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/PayrollSystem_autogen/6YEA5652QU/moc_MainWindow.cpp: C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/MainWindow.h \
-  C:/Users/Christian_Inna/Desktop/C++\ Payroll/build/PayrollSystem_autogen/moc_predefs.h \
-  C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/Database.h \
-  C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/User.h \
+A:/C---Payroll/build/PayrollSystem_autogen/6YEA5652QU/moc_MainWindow.cpp: A:/C---Payroll/include/MainWindow.h \
+  A:/C---Payroll/build/PayrollSystem_autogen/moc_predefs.h \
+  A:/C---Payroll/include/Database.h \
+  A:/C---Payroll/include/User.h \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_mac.h \
   C:/msys64/mingw64/include/_mingw_off_t.h \

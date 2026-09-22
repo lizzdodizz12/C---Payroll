@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Christian_Inna\Desktop\C++ Payroll"
+CMAKE_SOURCE_DIR = A:\C---Payroll
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Christian_Inna\Desktop\C++ Payroll\build"
+CMAKE_BINARY_DIR = A:\C---Payroll\build
 
 # Utility rule file for PayrollSystem_autogen_timestamp_deps.
 
@@ -80,6 +80,6 @@ CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Christian_Inna\Desktop\C++ Payroll" "C:\Users\Christian_Inna\Desktop\C++ Payroll" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build\CMakeFiles\PayrollSystem_autogen_timestamp_deps.dir\DependInfo.cmake" "--color=$(COLOR)" PayrollSystem_autogen_timestamp_deps
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" A:\C---Payroll A:\C---Payroll A:\C---Payroll\build A:\C---Payroll\build A:\C---Payroll\build\CMakeFiles\PayrollSystem_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)" PayrollSystem_autogen_timestamp_deps
 .PHONY : CMakeFiles/PayrollSystem_autogen_timestamp_deps.dir/depend
 

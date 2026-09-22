@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Christian_Inna\Desktop\C++ Payroll"
+CMAKE_SOURCE_DIR = A:\C---Payroll
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Christian_Inna\Desktop\C++ Payroll\build"
+CMAKE_BINARY_DIR = A:\C---Payroll\build
 
 # Utility rule file for create_db_dir.
 
@@ -66,7 +66,7 @@ include CMakeFiles/create_db_dir.dir/compiler_depend.make
 include CMakeFiles/create_db_dir.dir/progress.make
 
 CMakeFiles/create_db_dir:
-	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/Christian_Inna/Desktop/C++ Payroll/database"
+	"C:\Program Files\CMake\bin\cmake.exe" -E make_directory A:/C---Payroll/database
 
 CMakeFiles/create_db_dir.dir/codegen:
 .PHONY : CMakeFiles/create_db_dir.dir/codegen
@@ -84,6 +84,6 @@ CMakeFiles/create_db_dir.dir/clean:
 .PHONY : CMakeFiles/create_db_dir.dir/clean
 
 CMakeFiles/create_db_dir.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Christian_Inna\Desktop\C++ Payroll" "C:\Users\Christian_Inna\Desktop\C++ Payroll" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build\CMakeFiles\create_db_dir.dir\DependInfo.cmake" "--color=$(COLOR)" create_db_dir
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" A:\C---Payroll A:\C---Payroll A:\C---Payroll\build A:\C---Payroll\build A:\C---Payroll\build\CMakeFiles\create_db_dir.dir\DependInfo.cmake "--color=$(COLOR)" create_db_dir
 .PHONY : CMakeFiles/create_db_dir.dir/depend
 

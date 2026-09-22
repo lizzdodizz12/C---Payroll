@@ -40,11 +40,15 @@ private slots:
     void markSelectedPaid();
     void exportCsv();
     void refreshCurrentPage();
+    void toggleTheme();
 
 private:
+    void applyTheme();
     Database& db;
     User user;
     QStackedWidget* pages;
+    QAction* themeAction;
+    bool darkMode;
     QTableWidget* employeeTable;
     QTableWidget* positionTable;
     QTableWidget* attendanceTable;

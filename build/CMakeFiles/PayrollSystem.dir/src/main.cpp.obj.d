@@ -1,5 +1,5 @@
 CMakeFiles/PayrollSystem.dir/src/main.cpp.obj: \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\src\main.cpp \
+ A:\C---Payroll\src\main.cpp \
  C:/msys64/mingw64/include/qt6/QtWidgets/QApplication \
  C:/msys64/mingw64/include/qt6/QtWidgets/qapplication.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -391,36 +391,49 @@ CMakeFiles/PayrollSystem.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/qt6/QtCore/qvarlengtharray.h \
  C:/msys64/mingw64/include/qt6/QtCore/qalloc.h \
  C:/msys64/mingw64/include/qt6/QtGui/qguiapplication_platform.h \
- C:/msys64/mingw64/include/qt6/QtGui/QFont \
- C:/msys64/mingw64/include/qt6/QtGui/qfont.h \
- C:/msys64/mingw64/include/qt6/QtCore/qendian.h \
- C:/msys64/mingw64/include/qt6/QtWidgets/QInputDialog \
- C:/msys64/mingw64/include/qt6/QtWidgets/qinputdialog.h \
- C:/msys64/mingw64/include/qt6/QtWidgets/qlineedit.h \
- C:/msys64/mingw64/include/qt6/QtWidgets/qframe.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QDialog \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qwidget.h \
  C:/msys64/mingw64/include/qt6/QtGui/qaction.h \
  C:/msys64/mingw64/include/qt6/QtGui/qkeysequence.h \
  C:/msys64/mingw64/include/qt6/QtGui/qicon.h \
  C:/msys64/mingw64/include/qt6/QtGui/qpalette.h \
  C:/msys64/mingw64/include/qt6/QtGui/qbrush.h \
+ C:/msys64/mingw64/include/qt6/QtGui/qfont.h \
+ C:/msys64/mingw64/include/qt6/QtCore/qendian.h \
  C:/msys64/mingw64/include/qt6/QtGui/qfontmetrics.h \
  C:/msys64/mingw64/include/qt6/QtGui/qfontinfo.h \
  C:/msys64/mingw64/include/qt6/QtGui/qfontvariableaxis.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h \
- C:/msys64/mingw64/include/qt6/QtGui/qtextcursor.h \
+ C:/msys64/mingw64/include/qt6/QtGui/QFont \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QFormLayout \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qformlayout.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QLayout \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qlayout.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qlayoutitem.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qboxlayout.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qgridlayout.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QLabel \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qlabel.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qframe.h \
+ C:/msys64/mingw64/include/qt6/QtGui/qpicture.h \
+ C:/msys64/mingw64/include/qt6/QtCore/qiodevice.h \
  C:/msys64/mingw64/include/qt6/QtGui/qtextdocument.h \
  C:/msys64/mingw64/include/qt6/QtCore/qurl.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QLineEdit \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qlineedit.h \
+ C:/msys64/mingw64/include/qt6/QtGui/qtextcursor.h \
  C:/msys64/mingw64/include/qt6/QtGui/qtextformat.h \
  C:/msys64/mingw64/include/qt6/QtGui/qpen.h \
  C:/msys64/mingw64/include/qt6/QtGui/qtextoption.h \
- C:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \
- C:/msys64/mingw64/include/qt6/QtWidgets/QLineEdit \
  C:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox \
  C:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Database.h \
- C:/msys64/mingw64/include/sqlite3.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QPushButton \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qpushbutton.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/qabstractbutton.h \
+ C:/msys64/mingw64/include/qt6/QtWidgets/QVBoxLayout \
+ A:/C---Payroll/include/Database.h C:/msys64/mingw64/include/sqlite3.h \
  C:/msys64/mingw64/include/c++/16.1.0/iostream \
  C:/msys64/mingw64/include/c++/16.1.0/ostream \
  C:/msys64/mingw64/include/c++/16.1.0/bits/ostream.h \
@@ -437,7 +450,7 @@ CMakeFiles/PayrollSystem.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/16.1.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/16.1.0/istream \
  C:/msys64/mingw64/include/c++/16.1.0/bits/istream.tcc \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/MainWindow.h \
+ A:/C---Payroll/include/MainWindow.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
  C:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtabwidget.h \
@@ -473,12 +486,7 @@ CMakeFiles/PayrollSystem.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/qt6/QtWidgets/QDoubleSpinBox \
  C:/msys64/mingw64/include/qt6/QtWidgets/qspinbox.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QSpinBox \
- C:/msys64/mingw64/include/qt6/QtWidgets/QLabel \
- C:/msys64/mingw64/include/qt6/QtWidgets/qlabel.h \
- C:/msys64/mingw64/include/qt6/QtGui/qpicture.h \
- C:/msys64/mingw64/include/qt6/QtCore/qiodevice.h \
  C:/msys64/mingw64/include/qt6/QtWidgets/QTextEdit \
  C:/msys64/mingw64/include/qt6/QtWidgets/qtextedit.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/Database.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/User.h \
- C:/Users/CHRIST~1/Desktop/C__PAY~1/include/User.h
+ A:/C---Payroll/include/Database.h A:/C---Payroll/include/User.h \
+ A:/C---Payroll/include/User.h

@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Christian_Inna\Desktop\C++ Payroll"
+CMAKE_SOURCE_DIR = A:\C---Payroll
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Christian_Inna\Desktop\C++ Payroll\build"
+CMAKE_BINARY_DIR = A:\C---Payroll\build
 
 # Utility rule file for PayrollSystem_autogen.
 
@@ -70,9 +70,9 @@ CMakeFiles/PayrollSystem_autogen: PayrollSystem_autogen/timestamp
 PayrollSystem_autogen/timestamp: C:/msys64/mingw64/share/qt6/bin/moc.exe
 PayrollSystem_autogen/timestamp: C:/msys64/mingw64/share/qt6/bin/uic.exe
 PayrollSystem_autogen/timestamp: CMakeFiles/PayrollSystem_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="C:\Users\Christian_Inna\Desktop\C++ Payroll\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PayrollSystem"
-	"C:\Program Files\CMake\bin\cmake.exe" -E cmake_autogen "C:/Users/Christian_Inna/Desktop/C++ Payroll/build/CMakeFiles/PayrollSystem_autogen.dir/AutogenInfo.json" ""
-	"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/Christian_Inna/Desktop/C++ Payroll/build/PayrollSystem_autogen/timestamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=A:\C---Payroll\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PayrollSystem"
+	"C:\Program Files\CMake\bin\cmake.exe" -E cmake_autogen A:/C---Payroll/build/CMakeFiles/PayrollSystem_autogen.dir/AutogenInfo.json ""
+	"C:\Program Files\CMake\bin\cmake.exe" -E touch A:/C---Payroll/build/PayrollSystem_autogen/timestamp
 
 CMakeFiles/PayrollSystem_autogen.dir/codegen:
 .PHONY : CMakeFiles/PayrollSystem_autogen.dir/codegen
@@ -91,6 +91,6 @@ CMakeFiles/PayrollSystem_autogen.dir/clean:
 .PHONY : CMakeFiles/PayrollSystem_autogen.dir/clean
 
 CMakeFiles/PayrollSystem_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Christian_Inna\Desktop\C++ Payroll" "C:\Users\Christian_Inna\Desktop\C++ Payroll" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build" "C:\Users\Christian_Inna\Desktop\C++ Payroll\build\CMakeFiles\PayrollSystem_autogen.dir\DependInfo.cmake" "--color=$(COLOR)" PayrollSystem_autogen
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" A:\C---Payroll A:\C---Payroll A:\C---Payroll\build A:\C---Payroll\build A:\C---Payroll\build\CMakeFiles\PayrollSystem_autogen.dir\DependInfo.cmake "--color=$(COLOR)" PayrollSystem_autogen
 .PHONY : CMakeFiles/PayrollSystem_autogen.dir/depend
 

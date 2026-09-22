@@ -1,6 +1,5 @@
 CMakeFiles/PayrollSystem.dir/src/Database.cpp.obj: \
- C:\Users\Christian_Inna\Desktop\C++\ Payroll\src\Database.cpp \
- C:/Users/Christian_Inna/Desktop/C++\ Payroll/include/Database.h \
+ A:\C---Payroll\src\Database.cpp A:/C---Payroll/include/Database.h \
  C:/msys64/mingw64/include/c++/16.1.0/string \
  C:/msys64/mingw64/include/c++/16.1.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/16.1.0/x86_64-w64-mingw32/bits/c++config.h \
